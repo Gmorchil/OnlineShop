@@ -1,0 +1,66 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+article {
+  background: linear-gradient(90deg, #00b7ff, #ff30ff);
+  height: 600px;
+  width: 800px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.Log {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  width: 400px;
+}
+
+.Log .logIn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 20px;
+}
+
+input {
+  width: 300px;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 20px;
+  padding-inline: 3px;
+}
+
+p {
+  color: red;
+}
+
+.logButton,
+.signInButton {
+  width: 300px;
+  height: 40px;
+  background-color: black;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+.signIn {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}

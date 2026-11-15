@@ -1,0 +1,83 @@
+<main>
+  <section class="det">
+  @if (details(); as item) {
+    <div class="image">
+      @if (currentImage(); as img) {
+        <img [src]="img" alt="" />
+      }
+      @if (images().length > 1) {
+        <section class="nextPreview">
+          <h3 class="discount">
+            Discount:
+            {{ (1 - item.price.current / item.price.beforeDiscount) * 100 | number: '1.0-0' }}%
+          </h3>
+          <button (click)="preview()">
+            <i class="fa-solid fa-circle-arrow-left" style="color: black"></i>
+          </button>
+          <button (click)="next()">
+            <i class="fa-solid fa-circle-arrow-right" style="color: black"></i>
+          </button>
+        </section>
+      }
+    </div>
+
+    <div class="about">
+      <div class="title">
+        <h1>Brand: {{ item.brand | titlecase }}</h1>
+        <h1>Model: {{ item.title | titlecase }}</h1>
+      </div>
+      <div class="productDetails">
+        <h3>Issue Date: {{ item.issueDate | date }}</h3>
+        <h3>Warranty: {{ item.warranty }} Years</h3>
+      </div>
+      <div class="aboutDetails">
+        <h4>Stock: {{ item.stock }}</h4>
+        <h4>
+          Rating: {{ item.rating }}
+          <i class="fa-solid fa-star" style="color: gold"></i>
+        </h4>
+<ul class="rateProd" (mouseleave)="hoverRating.set(0)">
+  @for (star of stars; track star) {
+    <li
+      [class.active]="isStarActive(star)"
+      [class.disabled]="isRating()"
+      (mouseenter)="hoverRating.set(star)"
+      (click)="rate(star)"
+    >
+      <i class="fa-solid fa-star"></i>
+    </li>
+  }
+</ul>
+
+@if (rateMessage()) {
+  <p class="rate-message">{{ rateMessage() }}</p>
+}
+        <div class="pricing">
+          <h1 class="currentPrice">Price: {{ item.price.current }} {{ item.price.currency }}</h1>
+          <h3 class="oldPrice">{{ item.price.beforeDiscount }} {{ item.price.currency }}</h3>
+        </div>
+        <p>Description: {{ item.description }}</p>
+      </div>
+      <button [disabled]="item.stock <=0" class="AddToCart" (click)="addToCart(item._id)">Add To Cart</button>
+    @if (cartMessage()) {
+  <p class="cartMessage">{{ cartMessage() }}</p>
+}      
+    </div>
+
+  }
+  </section>
+</main>
+
+<!-- Random Products -->
+<section class="randomProd">
+  @for (item of randProd(); track $index) {
+    <div class="prodBox" [routerLink]="['/details', item._id]">
+      <img [src]="item.thumbnail" alt="" />
+      <h3>{{ item.title }}</h3>
+      <div class="prodBoxPrice">
+        <h4>Price: {{ item.price.current }} {{ item.price.currency }}</h4>
+        <h5>{{ item.price.beforeDiscount }} {{ item.price.currency }}</h5>
+      </div>
+    </div>
+  }
+</section>

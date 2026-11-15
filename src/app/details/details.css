@@ -1,0 +1,212 @@
+main{
+  margin: 150px 10px;
+}
+.det {
+  padding: 150px 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  background-color: #e3e3e3;
+  border-radius: 50px;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 60%;
+  height: 550px;
+  position: relative;
+}
+
+img {
+  height: 500px;
+  width: 730px;
+}
+
+.nextPreview {
+  width: 730px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  background-color: #e3e3e3;
+  border: none;
+}
+
+button .fa-circle-arrow-left,
+button .fa-circle-arrow-right {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.about {
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.AddToCart {
+  background-color: black;
+  color: white;
+  width: 100px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.cartMessage{
+  color: green;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.currentPrice {
+  color: black;
+}
+
+.oldPrice {
+  color: red;
+  text-decoration: line-through;
+}
+
+.discount {
+  background-color: green;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.randomProd {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 400px;
+}
+
+.prodBox {
+  background-color: #e3e3e3;
+  border: none;
+  max-width: 270px;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 0 25px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.prodBox img {
+  width: 100%;
+  height: 50%;
+  border-radius: 8px 8px 0 0;
+}
+
+.prodBox h4 {
+  color: green;
+}
+
+.prodBoxPrice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rateProd{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.rateProd li{
+  color: black;
+  list-style: none;
+}
+
+.rateProd li:hover{
+  color: gold;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.prodBox:hover {
+  background-color: #caf953;
+}
+
+@media (max-width: 1400px) {
+
+.randomProd {
+
+  height: 800px;
+}
+
+    .randomProd {
+    grid-template-columns: repeat(4, 1fr);}
+  img {
+    height: 400px;
+    width: 530px;
+  }
+  .nextPreview {
+    width: 530px;
+  }
+}
+
+@media (max-width: 1050px) {
+  img {
+    height: 300px;
+    width: 430px;
+  }
+
+  .randomProd {
+    grid-template-columns: repeat(3, 1fr);
+    height: 850px;
+    gap: 10px;
+  }
+  .nextPreview {
+    width: 430px;
+  }
+}
+
+@media (max-width: 900px) {
+  .det {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .image {
+    align-items: center;
+  }
+
+  .about {
+    height: 500px;
+    padding: 5px 10px;
+  }
+}

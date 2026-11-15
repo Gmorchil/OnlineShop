@@ -1,0 +1,111 @@
+<header>
+  <h1 class="headerText">G.Morchil Store</h1>
+</header>
+
+<section class="shop">
+  <h1>Our Product</h1>
+  <div class="product">
+    @for (item of randProd(); track $index) {
+      <div class="prodBox">
+        <div class="random">
+          <img [src]="item.thumbnail" alt="" [routerLink]="['/details', item._id]" />
+        </div>
+      </div>
+    }
+  </div>
+  <button class="shopNow" routerLink="/shop">Shop Now</button>
+</section>
+<section class="about"></section>
+
+<!-- შეფასება -->
+<section class="review">
+  <h1>Review Section</h1>
+  <h4>
+    Each product is tested for performance, compatibility, and durability. We work exclusively with
+    certified manufacturers. These products are safe, reliable, and built to perform.
+  </h4>
+  <div class="reviewBoxes">
+    <div class="revProd1">
+      @for (item of rev1(); track $index) {
+        <h2 class="rating">
+          {{ item.rating }}/5 <i class="fa-solid fa-star" style="color: gold"></i>
+        </h2>
+        <h2>Product Name:{{ item.title }}</h2>
+      }
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quo inventore vel
+        provident recusandae voluptatum iusto accusamus deleniti ex eaque voluptatem ipsum laborum
+        ullam sapiente exercitationem necessitatibus repellendus impedit quia, nisi ab cupiditate
+        consectetur odio! Fugit quaerat quibusdam nostrum nam
+      </p>
+      <h3>Paolo Maldini</h3>
+    </div>
+    <div class="revProd2">
+      @for (item of rev2(); track $index) {
+        <h2 class="rating">
+          {{ item.rating }}/5 <i class="fa-solid fa-star" style="color: gold"></i>
+        </h2>
+        <h2>Product Name:{{ item.title }}</h2>
+      }
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptas voluptatem non
+        aliquid nostrum iste! Deleniti nostrum qui sapiente vitae ut natus hic atque inventore
+        saepe, voluptatem tempore dolorum consequuntur accusantium tenetur dicta. Deleniti, nisi
+        necessitatibus totam facilis dolorem enim!
+      </p>
+      <h3>Tom Brady</h3>
+    </div>
+
+    <div class="revProd3">
+      @for (item of rev3(); track $index) {
+        <h2 class="rating">
+          {{ item.rating }}/5 <i class="fa-solid fa-star" style="color: gold"></i>
+        </h2>
+        <h2>Product Name:{{ item.title }}</h2>
+      }
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nulla, officia natus ratione
+        facilis ad libero dolores quis nihil perferendis accusantium beatae voluptates temporibus
+        ea!
+      </p>
+      <h3>Louis Bielle</h3>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="marquee">
+    <h3>Trusted by Industry Leaders</h3>
+<h1>Our Partners</h1>
+<div class="marqueeTrack">
+<div class="marqueeGroup">
+    <img src="/Samsung_old_logo_before_year_2015.svg.webp" alt="Samsung">
+    <img src="/Asus-Logo-1995-present.png" alt="Asus">
+    <img src="/Xiaomi_logo_horizontal_(2021-).svg.webp" alt="Xiaomi">
+    <img src="/Apple_logo_black.svg" alt="Apple">
+    <img src="/LOGO_Honor.svg.webp" alt="Honor">
+    <img src="/OnePlus-Logo.wine.png" alt="OnePlus">
+    <img src="/Lenovo_logo_2015.svg.webp" alt="Lenovo">
+    <img src="/HP_logo_2012.svg.webp" alt="HP">
+    <img src="/Acer_2011.svg.webp" alt="Acer">
+    <img src="/Dell_Logo.svg.webp" alt="Dell">
+    <img src="/msi-logo-01-freelogovectors.net_.png" alt="Msi">
+    <img src="/LG_logo_(2014).svg.webp" alt="LG">
+</div>
+<div class="marqueeGroup" aria-hidden="true">
+    <img src="/Samsung_old_logo_before_year_2015.svg.webp" alt="Samsung">
+    <img src="/Asus-Logo-1995-present.png" alt="Asus">
+    <img src="/Xiaomi_logo_horizontal_(2021-).svg.webp" alt="Xiaomi">
+    <img src="/Apple_logo_black.svg" alt="Apple">
+    <img src="/LOGO_Honor.svg.webp" alt="Honor">
+    <img src="/OnePlus-Logo.wine.png" alt="OnePlus">
+    <img src="/Lenovo_logo_2015.svg.webp" alt="Lenovo">
+    <img src="/HP_logo_2012.svg.webp" alt="HP">
+    <img src="/Acer_2011.svg.webp" alt="Acer">
+    <img src="/Dell_Logo.svg.webp" alt="Dell">
+    <img src="/msi-logo-01-freelogovectors.net_.png" alt="Msi">
+    <img src="/LG_logo_(2014).svg.webp" alt="LG">
+</div>
+</div>
+</section>

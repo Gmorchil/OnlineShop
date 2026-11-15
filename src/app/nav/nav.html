@@ -1,0 +1,42 @@
+<nav>
+  <div class="logo">
+    <img routerLink="/" src="../pic/images (2).jpeg" alt="" />
+  </div>
+  <ul class="menu">
+    <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </li>
+    <li routerLink="/shop" routerLinkActive="active">Product</li>
+    <li routerLink="/about" routerLinkActive="active">About</li>
+    <li routerLink="/contact" routerLinkActive="active">Contact</li>
+  </ul>
+
+  <ul class="logIn">
+    <li routerLinkActive="active" [routerLink]="auth.isLoggedIn() ? '/profile' : '/logIn'">
+      <i class="fa-solid fa-circle-user"></i>
+    </li>
+    <li class="cartIcon" routerLink="/cart" routerLinkActive="active">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <p>({{ service.cartCount() }})</p>
+    </li>
+  </ul>
+
+  <div class="burger" (click)="toggleMenu()">
+    <i class="fa-solid fa-bars" style="color: rgb(0, 0, 0)"></i>
+  </div>
+
+  <ul class="burger-menu" [class.show]="menuOpen">
+    <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </li>
+    <li routerLink="/shop" routerLinkActive="active">Product</li>
+    <li routerLink="/about" routerLinkActive="active">About</li>
+    <li routerLink="/contact" routerLinkActive="active">Contact</li>
+    <li routerLinkActive="active" [routerLink]="auth.isLoggedIn() ? '/profile' : '/logIn'">
+      <i class="fa-solid fa-circle-user"></i>
+    </li>
+    <li routerLink="/cart" routerLinkActive="active">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </li>
+  </ul>
+</nav>

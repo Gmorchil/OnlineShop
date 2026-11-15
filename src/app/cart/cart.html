@@ -1,0 +1,38 @@
+<main>
+  <h1>Cart</h1>
+  <section>
+    <table>
+      <tr class="title">
+        <th style="width: 2%"></th>
+        <th colspan="2" style="width: 80%">Product</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Total Price</th>
+      </tr>
+@for (item of cartList(); track item.productId) {
+  <tr>
+    <td>
+      <i (click)="removeCart(item.productId)"
+         class="fa-solid fa-square-xmark"
+         style="color: rgb(255, 212, 59); cursor: pointer;"></i>
+    </td>
+    <td><img [src]="item.thumbnail" [alt]="item.title"></td>
+    <td style="text-align: start">{{ item.title }}</td>
+    <td>{{ item.quantity }}</td>
+    <td>{{ item.price.current }}</td>
+    <td>{{ item.quantity * item.price.current }}</td>
+  </tr>
+}
+
+
+
+    </table>
+    <table>
+      <tr class="title">
+        <th style="width: 0"></th>
+        <th colspan="6" style="text-align: end; padding-inline: 20px;">Total Price:</th>
+        <th style="width: 100px;">{{totalPrice()}}$</th>
+      </tr>
+    </table>
+  </section>
+</main>

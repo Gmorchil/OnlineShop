@@ -1,0 +1,16 @@
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 500px;
+  gap: 50px;
+  margin-block-start: 100px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+}
+
+

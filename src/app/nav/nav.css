@@ -1,0 +1,119 @@
+nav {
+  background-color: #e3e3e3;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 20px;
+  height: 50px;
+  color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 90%;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.menu,
+.logIn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+li {
+  list-style: none;
+  width: 70px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.active {
+  color: #eee8d6;
+  background-color: black;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 15px black;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+h1 {
+  cursor: pointer;
+}
+
+.burger {
+  display: none;
+}
+
+.burgerMenu {
+  display: none;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.burger-menu.show {
+  right: 0;
+}
+
+.cartIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .burger {
+    display: flex;
+  }
+
+  .menu,
+  .logIn {
+    display: none;
+  }
+
+  .burger-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 250px;
+    height: 500px;
+    margin: 60px 10px;
+    border-radius: 0 8px 8px 8px;
+    background-color: #e3e3e3;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .burger-menu.show {
+    right: 0;
+  }
+}

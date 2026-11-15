@@ -1,0 +1,67 @@
+<main>
+  <section class="changePassword">
+    <h1>Change Password</h1>
+
+    <form class="changePass" (submit)="$event.preventDefault(); change()">
+      <label for="oldPass">Old Password</label>
+      <input type="password" id="oldPass" [formField]="changeForm.oldPassword" />
+
+      <label for="newPass">New Password</label>
+      <input type="password" id="newPass" [formField]="changeForm.newPassword" />
+
+      @if (changeForm.newPassword().touched()) {
+        @for (e of changeForm.newPassword().errors(); track e) {
+          <p class="error">{{ e.message }}</p>
+        }
+      }
+
+      <button type="submit" class="changepass" aria-label="Change password" [disabled]="loading()">
+        Change Password
+      </button>
+
+      @if (successMessage()) {
+        <p class="success">{{ successMessage() }}</p>
+      }
+      @if (errorMessage()) {
+        <p class="error">{{ errorMessage() }}</p>
+      }
+    </form>
+  </section>
+
+  <section class="changeData">
+    <h1>Change Details</h1>
+    <form class="changeDet" (submit)="updateUser($event)">
+      <input [formField]="signalForm.firstName" type="text" placeholder="FirstName" />
+      @if (signalForm.firstName().dirty() && signalForm.firstName().invalid()) {
+        @for (item of signalForm.firstName().errors(); track $index) {
+          <p>{{ item.message }}</p>
+        }
+      }
+      <input [formField]="signalForm.lastName" type="text" placeholder="LastName" />
+      @if (signalForm.lastName().dirty() && signalForm.lastName().invalid()) {
+        @for (item of signalForm.lastName().errors(); track $index) {
+          <p>{{ item.message }}</p>
+        }
+      }
+      <input [formField]="signalForm.age" type="text" placeholder="Age" />
+      <input [formField]="signalForm.address" type="text" placeholder="Address" />
+      <input [formField]="signalForm.phone" type="text" placeholder="Phone" />
+      @if (signalForm.phone().dirty() && signalForm.phone().invalid()) {
+        @for (item of signalForm.phone().errors(); track $index) {
+          <p>{{ item.message }}</p>
+        }
+      }
+      <input [formField]="signalForm.zipcode" type="text" placeholder="Zipcode" />
+      <input [formField]="signalForm.avatar" type="text" placeholder="Avatar" />
+      <input [formField]="signalForm.gender" type="text" placeholder="Gender" />
+
+      <button>Update</button>
+      @if (detsuccessMessage()) {
+        <p class="success">{{ detsuccessMessage() }}</p>
+      }
+      @if (deterrorMessage()) {
+        <p class="error">{{ deterrorMessage() }}</p>
+      }
+    </form>
+  </section>
+</main>

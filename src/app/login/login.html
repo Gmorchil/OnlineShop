@@ -1,0 +1,31 @@
+<main>
+  <article>
+  <section class="Log">
+    <h1>Sign In</h1>
+    <form class="logIn" (submit)="logIn($event)">
+      <label for="email">Email</label>
+      <input type="email" [formField]="signInmethod.email" id="email" />
+      @if (signInmethod.email().dirty() && signInmethod.email().invalid()) {
+        @for (item of signInmethod.email().errors(); track $index) {
+          <p>{{ item.message }}</p>
+        }
+      }
+      <label for="password">Password</label>
+      <input type="password" [formField]="signInmethod.password" id="password" />
+      @if (signInmethod.password().dirty() && signInmethod.password().invalid()) {
+        @for (item of signInmethod.password().errors(); track $index) {
+          <p>{{ item.message }}</p>
+        }
+      }
+      <button class="logButton">Log In</button>
+      @if (errorMessage()) {
+        <p class="error">{{ errorMessage() }}</p>
+      }
+    </form>
+  </section>
+  <section class="signIn">
+    <h1>Registration</h1>
+    <button class="signInButton" routerLink="/signIn">Registration</button>
+  </section>
+</article>
+</main>

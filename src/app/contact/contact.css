@@ -1,0 +1,132 @@
+main {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  background-color: #e3e3e3;
+  height: 800px;
+  width: 95%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.socMedia {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+.socMediaIcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 70px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-block: 150px;
+  height: 100%;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.subject input {
+  width: 500px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 8px;
+}
+.message textarea {
+  width: 500px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+select {
+  width: 500px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+button {
+  height: 50px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  color: #e3e3e3;
+}
+
+li {
+  list-style: none;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+i {
+  font-size: 40px;
+}
+
+@media (max-width: 1300px) {
+  article {
+    height: 800px;
+    flex-direction: column;
+    
+  }
+  .socMedia {
+    width: 95%;
+    padding: 5px;
+    height: 300px;
+  }
+
+  .contact form {
+    height: 300px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 860px) {
+  .subject input {
+    width: 300px;
+  }
+  .message textarea {
+    width: 300px;
+  }
+
+  select {
+    width: 300px;
+  }
+}

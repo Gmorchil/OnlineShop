@@ -1,0 +1,44 @@
+<main>
+  <section>
+    @if (profile(); as item) {
+      <div class="box">
+        <img [src]="item.avatar" alt="" />
+        <div class="info">
+          <div class="personal">
+            <h1>Name: {{ item.firstName }}</h1>
+            <h1>Surname: {{ item.lastName }}</h1>
+            <h2>Gender: {{ item.gender }}</h2>
+            <h2>Age: {{ item.age }}</h2>
+          </div>
+
+          <div class="contact">
+            <h3>
+              <i class="fa-solid fa-envelope" style="color: black"></i>:
+              {{ item.email }}
+            </h3>
+            <h3>
+              <i class="fa-solid fa-phone" style="color: black"></i>: {{ item.phone }}
+            </h3>
+            <h3>
+              <i class="fa-solid fa-envelope" style="color: black"></i> :
+              {{ item.address }}
+            </h3>
+            <h3>
+              <i class="fa-solid fa-code" style="color: black"></i>: {{ item.zipcode }}
+            </h3>
+          </div>
+        </div>
+      </div>
+     
+    } @else {
+      <p>Problem With Verification Please Check Email</p>
+    }
+
+    <button class="signOut" (click)="signOut()">
+      <i class="fa-solid fa-right-from-bracket" style="color: black"></i>
+    </button>
+    <button class="edit" (click)="goToChangePass()">
+      <i class="fa-solid fa-pencil" style="color: black"></i>
+    </button>
+  </section>
+</main>
